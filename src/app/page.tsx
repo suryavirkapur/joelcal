@@ -1,101 +1,173 @@
-import Image from "next/image";
-
-export default function Home() {
+// App.tsx
+const App: React.FC = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+    <div className="font-sans text-gray-900 bg-gray-100">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Vision />
+        <Pillars />
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
-}
+};
+
+export default App;
+
+const Header: React.FC = () => {
+  return (
+    <header className="bg-blue-900 text-white py-4 sticky top-0 z-50">
+      <nav className="container mx-auto px-4">
+        <ul className="flex justify-center space-x-6">
+          <li>
+            <a
+              href="#about"
+              className="hover:text-blue-300 transition duration-300"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#vision"
+              className="hover:text-blue-300 transition duration-300"
+            >
+              Vision
+            </a>
+          </li>
+          <li>
+            <a
+              href="#pillars"
+              className="hover:text-blue-300 transition duration-300"
+            >
+              Pillars
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+const Hero: React.FC = () => {
+  return (
+    <section className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20 md:py-32">
+      <div className="container mx-auto px-4 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          Joel Callistus Barboza
+        </h1>
+        <h2 className="text-2xl md:text-3xl mb-8">
+          For Vice President 2024-2025
+        </h2>
+        <button className="bg-white text-blue-800 font-bold py-2 px-6 rounded-full hover:bg-blue-100 transition duration-300">
+          Learn More
+        </button>
+      </div>
+    </section>
+  );
+};
+
+const About: React.FC = () => {
+  return (
+    <section id="about" className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+          About Joel
+        </h2>
+        <p className="text-lg max-w-3xl mx-auto text-center">
+          As a dedicated member of our campus, I believe that we all deserve a
+          university experience that empowers us, inspires us and prepares us
+          for the future. This is why I am committed to creating a Student
+          Council that is inclusive, accountable and driven by change.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+const Vision: React.FC = () => {
+  return (
+    <section id="vision" className="py-16 bg-blue-50">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+          My Vision
+        </h2>
+        <p className="text-lg max-w-3xl mx-auto text-center">
+          In the role of Vice President, I aim to serve as a bridge between the
+          administration and students, ensuring that your voices are not only
+          heard but acted upon. The challenges we face as students today are
+          unique, and I am ready to meet them with bold solutions and a
+          collaborative spirit.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+const Pillars: React.FC = () => {
+  const pillars = [
+    {
+      title: "Hostel & Facilities",
+      points: [
+        "Bringing the mess' quality to acceptable standards",
+        "Facilities like Gym and Recreational room to be kept open 24x7",
+        "Every hostel block will have common vacuums and other cleaning equipment",
+        // ... add more points
+      ],
+    },
+    {
+      title: "Academic",
+      points: [
+        "Have students poll on desired electives (pre-registration of electives)",
+        "Diversity in lecture distribution",
+        "Re-introduction of Peer-Assisted Learning",
+        // ... add more points
+      ],
+    },
+    {
+      title: "Extra Curriculars",
+      points: [
+        "Reworking of the Constitution to make it acceptable to the General Body",
+        "Involve general body in council meetings",
+        "Revive TEDx @BITS Dubai",
+        // ... add more points
+      ],
+    },
+  ];
+
+  return (
+    <section id="pillars" className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+          My 3 Pillars
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {pillars.map((pillar, index) => (
+            <div key={index} className="bg-blue-50 rounded-lg p-6 shadow-md">
+              <h3 className="text-xl font-bold mb-4">{pillar.title}</h3>
+              <ul className="list-disc list-inside">
+                {pillar.points.map((point, pointIndex) => (
+                  <li key={pointIndex} className="mb-2">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-blue-900 text-white py-8">
+      <div className="container mx-auto px-4 text-center">
+        <p>© 2024 Joel Callistus Barboza Campaign. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+};
