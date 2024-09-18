@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // App.tsx
 const App: React.FC = () => {
   return (
@@ -169,5 +171,38 @@ const Footer: React.FC = () => {
         <p>© 2024 Joel Callistus Barboza Campaign. All rights reserved.</p>
       </div>
     </footer>
+  );
+};
+
+const PhotoGrid: React.FC = () => {
+  const photos = [
+    { src: "/path/to/photo1.jpg", alt: "Photo 1 description" },
+    { src: "/path/to/photo2.jpg", alt: "Photo 2 description" },
+    { src: "/path/to/photo3.jpg", alt: "Photo 3 description" },
+    { src: "/path/to/photo4.jpg", alt: "Photo 4 description" },
+  ];
+
+  return (
+    <section className="py-16 bg-gray-100">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+          Campus Life
+        </h2>
+        <div className="grid grid-cols-2 gap-4">
+          {photos.map((photo, index) => (
+            <div
+              key={index}
+              className="aspect-square overflow-hidden rounded-lg shadow-md"
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
