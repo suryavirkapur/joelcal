@@ -198,7 +198,7 @@ const PhotoGrid: React.FC = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className="aspect-square overflow-hidden rounded-lg shadow-md w-96 h-96"
+              className="aspect-square overflow-hidden rounded-lg shadow-md w-full h-full"
             >
               <Image
                 src={image.src}
