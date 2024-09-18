@@ -59,6 +59,13 @@ const Hero: React.FC = () => {
   return (
     <section className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20 md:py-32">
       <div className="container mx-auto px-4 text-center">
+        <Image
+          src="https://media.licdn.com/dms/image/v2/D5603AQH8uOBf_eNUyA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726406190879?e=1732147200&v=beta&t=JBFD-kg8seJ-SZBj9n5-jRMjLA_npJbeZiXB61uf6LU"
+          alt={""}
+          width={"250"}
+          height={"250"}
+          className="w-36 h-36 rounded-full mx-auto"
+        />
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
           Joel Callistus Barboza
         </h1>
