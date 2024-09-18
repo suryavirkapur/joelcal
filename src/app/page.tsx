@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 // App.tsx
 const App: React.FC = () => {
