@@ -1,7 +1,5 @@
 // import Image from "next/image";
 
-import PhotoGrid from "@/components/PhotoGrid";
-
 // App.tsx
 const App: React.FC = () => {
   return (
@@ -12,7 +10,7 @@ const App: React.FC = () => {
         <About />
         <Vision />
         <Pillars />
-        <PhotoGrid2 />
+        <PhotoGrid />
       </main>
       <Footer />
     </div>
@@ -178,15 +176,39 @@ const Footer: React.FC = () => {
   );
 };
 
-const PhotoGrid2: React.FC = () => {
+// src/components/PhotoGrid.tsx
+
+import Image from "next/image";
+
+const PhotoGrid: React.FC = () => {
+  const images = [
+    { src: "/IMG_0490.png", alt: "Campus life image 1" },
+    { src: "/IMG_0491.png", alt: "Campus life image 2" },
+    { src: "/IMG_0492.png", alt: "Campus life image 3" },
+    { src: "/IMG_0493.png", alt: "Campus life image 4" },
+  ];
+
   return (
     <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4 max-w-screen-md just">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My Agendas
+      <div className="container mx-auto px-4 max-w-screen-md">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-900">
+          Campus Life
         </h2>
-        <div className="flex justify-between">
-          <PhotoGrid />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="aspect-square overflow-hidden rounded-lg shadow-md w-96 h-96"
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                height={"500"}
+                width={"500"}
+                className="transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
